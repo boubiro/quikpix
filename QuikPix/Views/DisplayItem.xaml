@@ -1,0 +1,25 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	xmlns:local="clr-namespace:QuikPix"
+	x:Class="QuikPix.DisplayItem"
+	d:DesignWidth="300" d:DesignHeight="450">
+    <Viewbox x:Name="LayoutRoot" Width="Auto" Height="Auto" Stretch="Uniform">
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+            <Border BorderThickness="3"  BorderBrush="AntiqueWhite" Margin="15,0,15,0" Padding="0" VerticalAlignment="Top">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5" BlurRadius="10" ShadowDepth="10"/>
+                </Border.Effect>
+                <Image Width="270" Source="{Binding BoxArt}" MinHeight="350" MinWidth="200" VerticalAlignment="Top"  />
+            </Border>
+            <TextBlock MaxWidth="270" HorizontalAlignment="Center" FontSize="16pt" FontWeight="DemiBold" Foreground="WhiteSmoke"  Margin="5,2" Text="{Binding Title}" ScrollViewer.VerticalScrollBarVisibility="Disabled" TextAlignment="Center" TextWrapping="WrapWithOverflow" >
+        	    <TextBlock.Effect>
+        		    <DropShadowEffect Opacity="0.5" BlurRadius="5" ShadowDepth="5"/>
+        	    </TextBlock.Effect>
+            </TextBlock>
+        </StackPanel>
+    </Viewbox>
+</UserControl>

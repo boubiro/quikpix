@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="QuikPix.Views.ItemDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="167" d:DesignWidth="968">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*" />
+            <ColumnDefinition Width="30*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*" MinHeight="25" />
+            <RowDefinition Height="85*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="0"  Orientation="Horizontal">
+            <TextBlock Text="{Binding RegularTitle}" Margin="0,0,0,5" TextWrapping="NoWrap" Foreground="#FFFFFFFF" FontSize="25" FontWeight="Bold" VerticalAlignment="Bottom" />
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5,0,5,9" FontSize="16" Foreground="White">
+                <TextBlock FontWeight="Bold" FontSize="14" Text="Average Rating: " /><TextBlock Text="{Binding AverageRating}" />
+            </TextBlock>
+
+            <!--<Grid Margin="5" VerticalAlignment="Bottom">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Width="20" Height="20" Source="Star-32.png"/>
+                        <Image Width="20" Height="20" Source="Star-32.png"/>
+                        <Image Width="20" Height="20" Source="Star-32.png"/>
+                        <Image Width="20" Height="20" Source="Star-32.png"/>
+                        <Image Width="20" Height="20" Source="Star-32-grey.png"/>
+                    </StackPanel>
+                </Grid>-->
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,5">
+            <TextBlock  Margin="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="16" Foreground="White">
+                <TextBlock FontWeight="Bold" FontSize="14" Text="Released: " /><TextBlock Text="{Binding ReleaseYear}" />
+            </TextBlock>
+            <TextBlock  Margin="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontSize="16" Foreground="White">
+                <TextBlock Text="{Binding RunTime}" /><TextBlock Text=" min" />
+            </TextBlock>
+            <Border Height="20" Width="35" Margin="5" Background="#FF333333" CornerRadius="3,3,3,3" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Quality}" Foreground="White" LineHeight="14" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom" />
+            </Border>
+            <Border Height="20" Width="35" Margin="0,5" Background="#FF1353F1" CornerRadius="3,3,3,3" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Rating}" Foreground="White" LineHeight="14" TextAlignment="Center" FontSize="14" VerticalAlignment="Bottom"/>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" CornerRadius="15,15,15,15" Background="#FFFFFFFF" VerticalAlignment="Stretch">
+            <TextBlock Margin="10"  TextWrapping="Wrap" Text="{Binding Synopsis}" VerticalAlignment="Top" FontSize="18" TextAlignment="Justify"/>
+        </Border>
+    </Grid>
+</UserControl>
